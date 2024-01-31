@@ -44,17 +44,26 @@
         section{
           margin-top: 200px;
         }
-        /* .home img{
-          width: 100%;
-          aspect-ratio: 3/2 auto;
-          object-fit: contain;
-          mix-blend-mode: color-burn;
-        } */
         img{
           aspect-ratio: 3/1 auto;
           object-fit: contain;
         }
       </style>
+    <script>
+        function downloadGoogleDrivePDF() { 
+          const fileId = '1wrX5Dvgx0AYuzrkuwOdGs59SaXw9V2g2';
+          // Create a download link
+          const downloadLink = document.createElement('a');
+          downloadLink.href = `https://drive.google.com/uc?id=${fileId}`;
+          downloadLink.download = 'downloaded_file.pdf';
+    
+          // Append the link to the document and trigger the click event
+          document.body.appendChild(downloadLink);
+          downloadLink.click();    
+          // Remove the link from the document
+          document.body.removeChild(downloadLink);
+        }
+      </script>
   </head>
   <body class="bg-dark">
    <div class="container text-white">
@@ -81,7 +90,7 @@
               </li>
             </ul>
             <form class="d-flex">
-              <button class="btn btn-primary" type="button">Download CV</button>
+              <button class="btn btn-primary" type="button" onclick="downloadGoogleDrivePDF()">Download CV</button>
             </form>
           </div>
         </div>
